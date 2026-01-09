@@ -17,6 +17,7 @@ Run:
 
 Output:
     results/figures/pi_estimation.png
+    results/figures/pi_error.png
 """
 import random
 import math
@@ -31,7 +32,7 @@ def estimate_pi_monte_carlo(N):
     N (int): Number of random points generated in the simulation.
 
     Returns:
-    None. Displays and saves a convergence plot of the pi estimation.
+    None. Displays and saves convergence and error plots.
     """
 
     # Create folders if they do not exist
@@ -40,6 +41,7 @@ def estimate_pi_monte_carlo(N):
     inside_circle = 0
     pi_estimates = []
     points = []
+    errors = []  # ERROR ANALYSIS LIST
 
     for i in range(1, N + 1):
         # Generate a random point in the unit square [0,1] x [0,1]
@@ -55,6 +57,10 @@ def estimate_pi_monte_carlo(N):
         pi_estimates.append(pi_hat)
         points.append(i)
 
+        # Absolute error calculation
+        error = abs(pi_hat - math.pi)
+        errors.append(error)
+
     # Plot the convergence of the Monte Carlo estimation
     plt.figure()
     plt.plot(points, pi_estimates, label="Monte Carlo π Estimate")
@@ -63,9 +69,16 @@ def estimate_pi_monte_carlo(N):
     plt.ylabel("π Estimate")
     plt.title("Monte Carlo Estimation of π")
     plt.legend()
-
-    # Save and show the plot
     plt.savefig("results/figures/pi_estimation.png")
+    plt.show()
+
+    # Plot the absolute error convergence
+    plt.figure()
+    plt.plot(points, errors)
+    plt.xlabel("Number of Points")
+    plt.ylabel("Absolute Error")
+    plt.title("Monte Carlo Absolute Error Convergence")
+    plt.savefig("results/figures/pi_error.png")
     plt.show()
 
 
