@@ -1,3 +1,23 @@
+"""
+IE221 - Probability | Team Work 3 & 4
+Monte Carlo Estimation of pi (π)
+
+Idea:
+Generate random points (x, y) uniformly in the unit square [0,1]×[0,1].
+The probability that a point falls inside the quarter unit circle x^2 + y^2 <= 1
+equals the area ratio:
+
+    P(inside) = (area of quarter circle) / (area of square) = (π/4) / 1 = π/4
+
+So we estimate:
+    π ≈ 4 * (# inside) / n
+
+Run:
+    python src/monte_carlo_pi.py
+
+Output:
+    results/figures/pi_estimation.png
+"""
 import random
 import math
 import matplotlib.pyplot as plt
