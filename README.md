@@ -4,7 +4,7 @@ Nil Belinay Akkoyun – 2211021005
 Mina Soyçeri – 2311021014  
 Gönül Hülya Atik – 2211021057  
 
-This repository is created for **IE221 – Probability** course, **Teamwork 4**.
+This repository is created for **IE221 – Probability** course, **Teamwork 3** and **Teamwork 4**.
 
 ## Project Overview
 The objective of this project is to document the simulation codes developed in
