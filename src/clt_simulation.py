@@ -1,3 +1,13 @@
+"""
+Central Limit Theorem (CLT) Simulation
+
+This script performs a Monte Carlo simulation to verify the Central Limit
+Theorem using Uniform(0,1) random variables. Standardized sums are generated
+for different sample sizes, and convergence in distribution is analyzed
+using histograms and Q-Q plots.
+"""
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats as stats
